@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR (SAME STYLE) -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+      <a href="e-Presciption.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">e-Prescription</a>
+      <a href="e-Inventory.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Inventory</a>
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Procurements</a>
+      <a href="Products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+      
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">Analytics Overview</h1>
+
+      <div class="flex gap-3">
+        <button class="px-4 py-2 bg-white rounded-xl border">This Month</button>
+        <button class="px-4 py-2 bg-black text-white rounded-xl">Export</button>
+      </div>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Revenue</p>
+        <h2 class="text-3xl font-bold">$24,530</h2>
+        <p class="text-green-500 text-sm">+18%</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Orders</p>
+        <h2 class="text-3xl font-bold">1,245</h2>
+        <p class="text-green-500 text-sm">+12%</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Customers</p>
+        <h2 class="text-3xl font-bold">8,430</h2>
+        <p class="text-green-500 text-sm">+7%</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Conversion Rate</p>
+        <h2 class="text-3xl font-bold">6.8%</h2>
+        <p class="text-red-500 text-sm">-1.2%</p>
+      </div>
+
+    </div>
+
+    <!-- CHARTS -->
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <!-- Revenue Chart -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <h3 class="font-semibold mb-4">Revenue Growth</h3>
+        <div id="revenueChart"></div>
+      </div>
+
+      <!-- Users Chart -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <h3 class="font-semibold mb-4">User Growth</h3>
+        <div id="userChart"></div>
+      </div>
+
+    </div>
+
+    <!-- TRAFFIC SOURCES -->
+    <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+      <h3 class="font-semibold mb-4">Traffic Sources</h3>
+
+      <div class="space-y-4">
+
+        <div>
+          <div class="flex justify-between text-sm">
+            <span>Organic Search</span>
+            <span>45%</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full mt-1">
+            <div class="bg-black h-2 rounded-full w-[45%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm">
+            <span>Paid Ads</span>
+            <span>25%</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full mt-1">
+            <div class="bg-black h-2 rounded-full w-[25%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm">
+            <span>Social Media</span>
+            <span>20%</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full mt-1">
+            <div class="bg-black h-2 rounded-full w-[20%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm">
+            <span>Direct</span>
+            <span>10%</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full mt-1">
+            <div class="bg-black h-2 rounded-full w-[10%]"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<!-- CHART SCRIPT -->
+<script>
+
+var revenueOptions = {
+  series: [{
+    name: "Revenue",
+    data: [12, 19, 23, 29, 35, 42, 50]
+  }],
+  chart: {
+    type: "area",
+    height: 300,
+    toolbar: { show: false }
+  },
+  stroke: { curve: "smooth" },
+  colors: ["#000000"],
+  xaxis: {
+    categories: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+  }
+};
+
+new ApexCharts(document.querySelector("#revenueChart"), revenueOptions).render();
+
+
+var userOptions = {
+  series: [{
+    name: "Users",
+    data: [200, 400, 350, 500, 700, 900, 1200]
+  }],
+  chart: {
+    type: "line",
+    height: 300,
+    toolbar: { show: false }
+  },
+  stroke: { curve: "smooth" },
+  colors: ["#F59E0B"],
+  xaxis: {
+    categories: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+  }
+};
+
+new ApexCharts(document.querySelector("#userChart"), userOptions).render();
+
+</script>
+
+</body>
+</html>

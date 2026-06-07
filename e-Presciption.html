@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Prescription</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+
+      <a href="e-Prescription.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        e-Prescription
+      </a>
+
+      <a href="products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Procurements</a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+
+      <h1 class="text-2xl font-semibold">E-Prescription System</h1>
+
+      <button class="bg-black text-white px-4 py-2 rounded-xl">
+        New Prescription
+      </button>
+
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Total Prescriptions</p>
+        <h2 class="text-3xl font-bold">1,820</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Pending</p>
+        <h2 class="text-3xl font-bold text-yellow-500">64</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Completed</p>
+        <h2 class="text-3xl font-bold text-green-500">1,610</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Rejected</p>
+        <h2 class="text-3xl font-bold text-red-500">146</h2>
+      </div>
+
+    </div>
+
+    <!-- PRESCRIPTION FORM -->
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- FORM -->
+      <div class="lg:col-span-2 bg-white rounded-3xl shadow-sm p-6">
+
+        <h3 class="font-semibold text-lg mb-4">Create Prescription</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+          <input class="border p-3 rounded-xl" placeholder="Patient Name"/>
+          <input class="border p-3 rounded-xl" placeholder="Patient ID"/>
+
+          <input class="border p-3 rounded-xl" placeholder="Age"/>
+          <input class="border p-3 rounded-xl" placeholder="Doctor Name"/>
+
+        </div>
+
+        <textarea
+          class="border p-3 rounded-xl w-full mt-4 h-32"
+          placeholder="Diagnosis / Notes"
+        ></textarea>
+
+        <h4 class="mt-6 font-semibold">Medicines</h4>
+
+        <div class="space-y-3 mt-3">
+
+          <div class="grid grid-cols-3 gap-3">
+            <input class="border p-3 rounded-xl" placeholder="Medicine"/>
+            <input class="border p-3 rounded-xl" placeholder="Dosage"/>
+            <input class="border p-3 rounded-xl" placeholder="Duration"/>
+          </div>
+
+          <button class="text-sm text-blue-600">
+            + Add more medicine
+          </button>
+
+        </div>
+
+        <button class="mt-6 bg-black text-white px-6 py-3 rounded-xl">
+          Save Prescription
+        </button>
+
+      </div>
+
+      <!-- SIDE PANEL -->
+      <div class="bg-white rounded-3xl shadow-sm p-6">
+
+        <h3 class="font-semibold mb-4">Recent Prescriptions</h3>
+
+        <div class="space-y-4 text-sm">
+
+          <div class="border-b pb-3">
+            <p class="font-medium">John Doe</p>
+            <p class="text-gray-500">Paracetamol, Vitamin C</p>
+            <span class="text-green-600 text-xs">Completed</span>
+          </div>
+
+          <div class="border-b pb-3">
+            <p class="font-medium">Mary Johnson</p>
+            <p class="text-gray-500">Antibiotics</p>
+            <span class="text-yellow-600 text-xs">Pending</span>
+          </div>
+
+          <div>
+            <p class="font-medium">Michael Brown</p>
+            <p class="text-gray-500">Inhaler</p>
+            <span class="text-green-600 text-xs">Completed</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+      <div class="p-6 flex justify-between items-center">
+        <h3 class="font-semibold text-lg">All Prescriptions</h3>
+        <input class="border px-4 py-2 rounded-xl w-64" placeholder="Search patient..."/>
+      </div>
+
+      <table class="w-full text-left">
+
+        <thead class="bg-gray-50 text-gray-500">
+          <tr>
+            <th class="p-4">Patient</th>
+            <th>Doctor</th>
+            <th>Medicines</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="border-t">
+            <td class="p-4">John Doe</td>
+            <td>Dr. Smith</td>
+            <td>Paracetamol</td>
+            <td>
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
+                Completed
+              </span>
+            </td>
+            <td>21 June</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">Mary Johnson</td>
+            <td>Dr. Adams</td>
+            <td>Antibiotics</td>
+            <td>
+              <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm">
+                Pending
+              </span>
+            </td>
+            <td>20 June</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">Michael Brown</td>
+            <td>Dr. Lee</td>
+            <td>Inhaler</td>
+            <td>
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
+                Completed
+              </span>
+            </td>
+            <td>19 June</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

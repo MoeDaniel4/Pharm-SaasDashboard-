@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Esther Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col">
+
+    <div class="p-6 text-2xl font-bold">
+      Esther
+    </div>
+
+    <nav class="flex-1 px-4 space-y-2 text-gray-600">
+
+      <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        Dashboard
+      </a>
+
+      <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        Analytics
+      </a>
+
+      <a href="POS.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        POS
+      </a>
+
+      <a href="e-Presciption.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        e-Prescription
+      </a>
+
+      <a href="" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        e-Laboratory
+      </a>
+
+      <a href="e-Inventory.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        Inventory Management
+      </a>
+
+      <a href="procurements.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        Procurements
+      </a>
+
+      <a href="Products.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        Products
+       
+      </a>
+
+      <hr class="my-4"/>
+
+      <a href="User Management.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        User Management
+      </a>
+
+      <a href="System Settings.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        System Settings
+      </a>
+
+      <a href="Support.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
+        Support
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1">
+
+    <!-- TOP BAR -->
+    <header class="bg-white border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+
+      <h1 class="text-xl font-semibold">
+        Good morning, Dr. Esther!
+      </h1>
+
+      <div class="flex items-center gap-4">
+
+        <button class="bg-gray-100 px-4 py-2 rounded-xl">
+          Filter Date
+        </button>
+
+        <button class="bg-black text-white px-4 py-2 rounded-xl">
+          Export
+        </button>
+
+        <img src="./images/elegant-woman-brown-dress.jpg" class="w-10 h-10 rounded-full"/>
+
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="p-6 space-y-6">
+
+      <!-- CARDS -->
+      <div class="grid lg:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-3xl p-6 shadow-sm">
+          <p class="text-gray-500">Revenue</p>
+          <h2 class="text-3xl font-bold">$10,103</h2>
+          <p class="text-green-500 text-sm">+12% this month</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-sm">
+          <p class="text-gray-500">Total Products</p>
+          <h2 class="text-3xl font-bold">1123</h2>
+          <p class="text-gray-400 text-sm">Active on platform</p>
+        </div>
+
+        <div class="bg-black text-white rounded-3xl p-6">
+          <h2 class="text-lg font-semibold">
+            Your MED system on the go
+          </h2>
+
+          <button class="mt-4 bg-amber-400 text-black px-4 py-2 rounded-xl">
+            Download App
+          </button>
+        </div>
+
+      </div>
+
+      <!-- QUICK MODULES -->
+      <div class="grid lg:grid-cols-4 gap-5">
+
+        <div class="bg-white p-6 rounded-3xl shadow-sm">
+          <h3 class="font-semibold">e-Prescription</h3>
+          <p class="text-gray-500 text-sm">Manage prescriptions</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl shadow-sm">
+          <h3 class="font-semibold">POS</h3>
+          <p class="text-gray-500 text-sm">Process payments</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl shadow-sm">
+          <h3 class="font-semibold">Products</h3>
+          <p class="text-gray-500 text-sm">Inventory system</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl shadow-sm">
+          <h3 class="font-semibold">Procurement</h3>
+          <p class="text-gray-500 text-sm">Track stock flow</p>
+        </div>
+
+      </div>
+
+      <!-- TABLE -->
+      <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+        <div class="p-6 flex justify-between items-center">
+          <h3 class="font-semibold text-lg">New Products</h3>
+
+          <input class="border px-4 py-2 rounded-xl w-64" placeholder="Search"/>
+        </div>
+
+        <table class="w-full text-left">
+
+          <thead class="bg-gray-50 text-gray-500">
+            <tr>
+              <th class="p-4">Product</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr class="border-t">
+              <td class="p-4">Inhaler X12</td>
+              <td>$10</td>
+              <td>1</td>
+              <td>19 June 2025</td>
+              <td><span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">In Stock</span></td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-4">P-Alaxin</td>
+              <td>$10</td>
+              <td>1</td>
+              <td>19 June 2025</td>
+              <td><span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">In Stock</span></td>
+            </tr>
+
+            <tr class="border-t">
+              <td class="p-4">Natrilix</td>
+              <td>$10</td>
+              <td>1</td>
+              <td>19 June 2025</td>
+              <td><span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">In Stock</span></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>

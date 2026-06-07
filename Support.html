@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+      <a href="e-Inventory.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Inventory</a>
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Procurements</a>
+      <a href="products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+      <a href="User Management.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">User Management</a>
+      <a href="System Settings.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">System Settings</a>
+
+      <a href="Support.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        Support
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+
+      <h1 class="text-2xl font-semibold">Support Center</h1>
+
+      <button class="bg-black text-white px-4 py-2 rounded-xl">
+        Create Ticket
+      </button>
+
+    </div>
+
+    <!-- SUPPORT STATS -->
+    <div class="grid lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Open Tickets</p>
+        <h2 class="text-3xl font-bold">34</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Resolved</p>
+        <h2 class="text-3xl font-bold text-green-500">128</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Pending</p>
+        <h2 class="text-3xl font-bold text-yellow-500">19</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Critical Issues</p>
+        <h2 class="text-3xl font-bold text-red-500">5</h2>
+      </div>
+
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="flex flex-col md:flex-row gap-4 justify-between">
+
+      <input class="bg-white border px-4 py-3 rounded-xl w-full md:w-96" placeholder="Search tickets..."/>
+
+      <div class="flex gap-3">
+
+        <select class="bg-white border px-4 py-3 rounded-xl">
+          <option>Status</option>
+          <option>Open</option>
+          <option>Pending</option>
+          <option>Resolved</option>
+        </select>
+
+        <select class="bg-white border px-4 py-3 rounded-xl">
+          <option>Priority</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+          <option>Critical</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- TICKETS TABLE -->
+    <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+      <div class="p-6 flex justify-between items-center">
+        <h3 class="font-semibold text-lg">Support Tickets</h3>
+
+        <button class="bg-black text-white px-4 py-2 rounded-xl">
+          Export
+        </button>
+      </div>
+
+      <table class="w-full text-left">
+
+        <thead class="bg-gray-50 text-gray-500">
+          <tr>
+            <th class="p-4">Ticket ID</th>
+            <th>User</th>
+            <th>Issue</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="border-t">
+            <td class="p-4">#TKT-001</td>
+            <td>John Doe</td>
+            <td>Login not working</td>
+            <td><span class="text-red-600">High</span></td>
+            <td><span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm">Pending</span></td>
+            <td>21 June</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">#TKT-002</td>
+            <td>Sarah Johnson</td>
+            <td>POS system error</td>
+            <td><span class="text-red-600">Critical</span></td>
+            <td><span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">Open</span></td>
+            <td>20 June</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">#TKT-003</td>
+            <td>Michael Brown</td>
+            <td>Inventory mismatch</td>
+            <td><span class="text-yellow-600">Medium</span></td>
+            <td><span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Resolved</span></td>
+            <td>19 June</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <!-- SUPPORT OPTIONS -->
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-2">Live Chat</h3>
+        <p class="text-gray-500 text-sm">Talk to support agents in real time</p>
+
+        <button class="mt-4 bg-black text-white px-4 py-2 rounded-xl">
+          Start Chat
+        </button>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-2">Knowledge Base</h3>
+        <p class="text-gray-500 text-sm">Find answers to common issues</p>
+
+        <button class="mt-4 bg-gray-100 px-4 py-2 rounded-xl">
+          Browse Articles
+        </button>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-2">Report a Bug</h3>
+        <p class="text-gray-500 text-sm">Submit system issues for review</p>
+
+        <button class="mt-4 bg-black text-white px-4 py-2 rounded-xl">
+          Submit Bug
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

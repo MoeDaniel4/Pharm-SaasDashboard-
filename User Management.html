@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+      <a href="e-Prescription.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">e-Prescription</a>
+      <a href="e-Inventory.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">e-Inventory</a>
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Procurements</a>
+      <a href="products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+
+      <a href="User Management.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        User Management
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+
+      <h1 class="text-2xl font-semibold">User Management</h1>
+
+      <button class="bg-black text-white px-4 py-2 rounded-xl">
+        Add New User
+      </button>
+
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Total Users</p>
+        <h2 class="text-3xl font-bold">1,284</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Active Users</p>
+        <h2 class="text-3xl font-bold text-green-500">1,102</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Admins</p>
+        <h2 class="text-3xl font-bold">18</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Suspended</p>
+        <h2 class="text-3xl font-bold text-red-500">24</h2>
+      </div>
+
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="flex flex-col md:flex-row gap-4 justify-between">
+
+      <input class="bg-white border px-4 py-3 rounded-xl w-full md:w-96" placeholder="Search users..."/>
+
+      <div class="flex gap-3">
+
+        <select class="bg-white border px-4 py-3 rounded-xl">
+          <option>All Roles</option>
+          <option>Admin</option>
+          <option>Doctor</option>
+          <option>Pharmacist</option>
+          <option>Staff</option>
+        </select>
+
+        <select class="bg-white border px-4 py-3 rounded-xl">
+          <option>Status</option>
+          <option>Active</option>
+          <option>Inactive</option>
+          <option>Suspended</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- USERS TABLE -->
+    <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+      <div class="p-6 flex justify-between items-center">
+        <h3 class="font-semibold text-lg">System Users</h3>
+
+        <button class="bg-black text-white px-4 py-2 rounded-xl">
+          Export
+        </button>
+      </div>
+
+      <table class="w-full text-left">
+
+        <thead class="bg-gray-50 text-gray-500">
+          <tr>
+            <th class="p-4">User</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Last Active</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="border-t">
+            <td class="p-4 flex items-center gap-3">
+              <img src="https://i.pravatar.cc/40?img=1" class="w-10 h-10 rounded-full"/>
+              John Doe
+            </td>
+            <td>Admin</td>
+            <td>Manny@Esther.com</td>
+            <td>
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
+                Active
+              </span>
+            </td>
+            <td>2 mins ago</td>
+            <td>
+              <button class="text-blue-600">Edit</button>
+            </td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4 flex items-center gap-3">
+              <img src="https://i.pravatar.cc/40?img=2" class="w-10 h-10 rounded-full"/>
+              Sarah Johnson
+            </td>
+            <td>Doctor</td>
+            <td>sarah@Esther.com</td>
+            <td>
+              <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm">
+                Inactive
+              </span>
+            </td>
+            <td>2 hours ago</td>
+            <td>
+              <button class="text-blue-600">Edit</button>
+            </td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4 flex items-center gap-3">
+              <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 rounded-full"/>
+              Michael Brown
+            </td>
+            <td>Pharmacist</td>
+            <td>michael@Esther.com</td>
+            <td>
+              <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                Suspended
+              </span>
+            </td>
+            <td>1 day ago</td>
+            <td>
+              <button class="text-blue-600">Edit</button>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <!-- ROLE MANAGEMENT -->
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Role Distribution</h3>
+
+        <div class="space-y-3 text-sm">
+
+          <div class="flex justify-between">
+            <span>Doctors</span>
+            <span>40%</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Pharmacists</span>
+            <span>25%</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Admins</span>
+            <span>5%</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Staff</span>
+            <span>30%</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">System Insights</h3>
+
+        <p class="text-gray-500 text-sm leading-relaxed">
+          User activity is stable. Admin roles should be monitored closely for permission control.
+        </p>
+
+        <div class="mt-4 bg-black text-white p-4 rounded-2xl text-sm">
+          AI Alert: 3 users require role verification update.
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

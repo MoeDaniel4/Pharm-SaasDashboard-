@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>System Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+      <a href="e-Inventory.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Inventory</a>
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Procurements</a>
+      <a href="products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+      <a href="User Management.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">User Management</a>
+
+      <a href="System Settings.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        System Settings
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+
+      <h1 class="text-2xl font-semibold">System Settings</h1>
+
+      <button class="bg-black text-white px-4 py-2 rounded-xl">
+        Save Changes
+      </button>
+
+    </div>
+
+    <!-- SETTINGS GRID -->
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- GENERAL SETTINGS -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">General Settings</h3>
+
+        <div class="space-y-4">
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Company Name" value="Medrack Health System"/>
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Email" value="admin@medrack.com"/>
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Phone Number"/>
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Address"/>
+
+        </div>
+
+      </div>
+
+      <!-- SECURITY -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Security</h3>
+
+        <div class="space-y-4">
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Current Password"/>
+
+          <input class="w-full border p-3 rounded-xl" placeholder="New Password"/>
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Confirm Password"/>
+
+        </div>
+
+        <div class="mt-4 space-y-3 text-sm">
+
+          <label class="flex items-center gap-2">
+            <input type="checkbox"/>
+            Enable Two-Factor Authentication
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="checkbox"/>
+            Login alerts via email
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input type="checkbox"/>
+            Restrict admin access by IP
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- SYSTEM CONTROL -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">System Control</h3>
+
+        <div class="space-y-4">
+
+          <div class="flex justify-between items-center">
+            <span>Maintenance Mode</span>
+            <input type="checkbox"/>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <span>Auto Backup</span>
+            <input type="checkbox" checked/>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <span>Allow Registrations</span>
+            <input type="checkbox" checked/>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <span>Debug Mode</span>
+            <input type="checkbox"/>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- NOTIFICATIONS + BILLING -->
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <!-- NOTIFICATIONS -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Notification Settings</h3>
+
+        <div class="space-y-3 text-sm">
+
+          <label class="flex justify-between">
+            <span>Email Notifications</span>
+            <input type="checkbox" checked/>
+          </label>
+
+          <label class="flex justify-between">
+            <span>SMS Alerts</span>
+            <input type="checkbox"/>
+          </label>
+
+          <label class="flex justify-between">
+            <span>System Alerts</span>
+            <input type="checkbox" checked/>
+          </label>
+
+          <label class="flex justify-between">
+            <span>Marketing Emails</span>
+            <input type="checkbox"/>
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- BILLING -->
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Billing Settings</h3>
+
+        <div class="space-y-4">
+
+          <input class="w-full border p-3 rounded-xl" placeholder="Card Number"/>
+
+          <div class="grid grid-cols-2 gap-3">
+            <input class="border p-3 rounded-xl" placeholder="Expiry"/>
+            <input class="border p-3 rounded-xl" placeholder="CVV"/>
+          </div>
+
+          <button class="w-full bg-black text-white py-3 rounded-xl">
+            Update Billing
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

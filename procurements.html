@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Procurements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F6F7FB]">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-white border-r border-gray-100 hidden md:flex flex-col p-6">
+
+    <h1 class="text-2xl font-bold mb-6">Esther</h1>
+
+    <nav class="space-y-2 text-gray-600">
+
+      <a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Dashboard</a>
+      <a href="analytics.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Analytics</a>
+      <a href="POS.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">POS</a>
+      <a href="e-Presciption.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">e-Prescription</a>
+      <a href="e-Inventory.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Inventory</a>
+
+      <a href="procurements.html" class="block px-4 py-3 rounded-xl bg-amber-50 text-black font-medium">
+        Procurements
+      </a>
+
+      <a href="Products.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">Products</a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 space-y-6">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+
+      <h1 class="text-2xl font-semibold">Procurement Management</h1>
+
+      <button class="bg-black text-white px-4 py-2 rounded-xl">
+        New Request
+      </button>
+
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid lg:grid-cols-4 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Total Requests</p>
+        <h2 class="text-3xl font-bold">48</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Pending Approval</p>
+        <h2 class="text-3xl font-bold">12</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Approved</p>
+        <h2 class="text-3xl font-bold">30</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+        <p class="text-gray-500">Total Spend</p>
+        <h2 class="text-3xl font-bold">$18,240</h2>
+      </div>
+
+    </div>
+
+    <!-- PROCUREMENT TABLE -->
+    <div class="bg-white rounded-3xl shadow-sm overflow-hidden">
+
+      <div class="p-6 flex justify-between items-center">
+        <h3 class="font-semibold text-lg">Procurement Requests</h3>
+
+        <input class="border px-4 py-2 rounded-xl w-64" placeholder="Search request..." />
+      </div>
+
+      <table class="w-full text-left">
+
+        <thead class="bg-gray-50 text-gray-500">
+          <tr>
+            <th class="p-4">Item</th>
+            <th>Department</th>
+            <th>Quantity</th>
+            <th>Budget</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr class="border-t">
+            <td class="p-4">Surgical Gloves</td>
+            <td>Laboratory</td>
+            <td>500 boxes</td>
+            <td>$1,200</td>
+            <td>
+              <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
+                Pending
+              </span>
+            </td>
+            <td>21 June 2025</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">Paracetamol Stock</td>
+            <td>Pharmacy</td>
+            <td>2,000 packs</td>
+            <td>$3,400</td>
+            <td>
+              <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                Approved
+              </span>
+            </td>
+            <td>18 June 2025</td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="p-4">Medical Masks</td>
+            <td>Emergency</td>
+            <td>10,000 pcs</td>
+            <td>$2,100</td>
+            <td>
+              <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">
+                Rejected
+              </span>
+            </td>
+            <td>15 June 2025</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <!-- SUPPLIER SECTION -->
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Top Suppliers</h3>
+
+        <div class="space-y-4 text-sm">
+
+          <div class="flex justify-between">
+            <span>MedSupply Ltd</span>
+            <span class="text-green-600">Active</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>PharmaCore NG</span>
+            <span class="text-green-600">Active</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>HealthPlus Distributors</span>
+            <span class="text-yellow-600">Review</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm">
+
+        <h3 class="font-semibold mb-4">Procurement Insights</h3>
+
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Procurement costs have increased by 8% this month due to higher importation
+          rates for medical supplies. Recommended supplier diversification is advised.
+        </p>
+
+        <div class="mt-4 bg-black text-white p-4 rounded-2xl">
+          AI Insight: Optimize bulk ordering to reduce cost by 14%
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
